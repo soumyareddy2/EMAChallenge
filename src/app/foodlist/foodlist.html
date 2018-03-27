@@ -1,0 +1,24 @@
+<!-- Generated template for the FoodlistComponent component -->
+<div class="search-area">
+	<input [(ngModel)]="foodItem"><br>
+	<button (click)="searchFoodItems()"> Search </button>
+	<br>
+	<span *ngIf="!foodItems" class="section-label">
+		Please Search a food item 
+	</span>
+</div>
+
+<table *ngIf="foodItems" class="food-table">
+	<tr>
+		<th>Name</th>
+		<th>Group</th>
+	</tr>
+	<tr *ngFor="let fi of foodItems.list.item" (click)="navigateToBasicReport(fi)">
+		<td>
+			<span> {{fi.name}}</span>
+		</td>
+		<td>
+			<span> {{fi.group}}</span>
+		</td>
+	</tr>
+</table>

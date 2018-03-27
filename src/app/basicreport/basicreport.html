@@ -1,0 +1,12 @@
+<!-- Generated template for the BasicreportComponent component -->
+<div *ngIf="basicReport" class="basic-report">
+	<span class="food-item">{{basicReport.report.food.name}}</span>	
+	<ul>
+		<li *ngFor="let nutrients of basicReport.report.food.nutrients">
+			<span class="food-item"> Name : </span><span>{{nutrients.name}}</span>
+			<span class="food-item"> Group : </span><span>{{nutrients.group}}</span>
+			<span class="food-item"> Value : </span> <span>{{nutrients.value}}</span>
+		</li>
+	</ul>
+	<button (click)="backToList()"> <- Back </button>
+</div>
